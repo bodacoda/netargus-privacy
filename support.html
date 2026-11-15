@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NetArgus – Support</title>
+  <meta name="description" content="Support and frequently asked questions about the NetArgus app (English, German below). Support und häufige Fragen zur App NetArgus (Deutsch unten).">
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #1d2330;
+      --muted: #5b6475;
+      --accent: #0a7c66;
+      --border: #e3e6ec;
+      --badge-bg: #e4f4ef;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1218;
+        --card: #171b23;
+        --text: #e6e9ef;
+        --muted: #9aa3b2;
+        --accent: #3ccfa8;
+        --border: #262c37;
+        --badge-bg: #133229;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+    header { padding-top: 48px; padding-bottom: 8px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em; }
+    .lang { margin-left: auto; font-size: 0.9rem; font-weight: 500; letter-spacing: 0; }
+    .logo { width: 40px; height: 40px; border-radius: 10px; background: var(--accent); display: grid; place-items: center; }
+    .logo svg { width: 24px; height: 24px; }
+    h1 { font-size: 2rem; line-height: 1.2; margin: 28px 0 8px; }
+    .meta { color: var(--muted); margin: 0; }
+    .contact {
+      margin: 28px 0 8px; padding: 20px 22px;
+      background: var(--badge-bg); border-radius: 14px; border: 1px solid var(--border);
+    }
+    .contact h2 { margin-top: 0; }
+    .contact p { margin: 6px 0; }
+    .button {
+      display: inline-block; margin-top: 8px; padding: 10px 18px;
+      background: var(--accent); color: #fff; border-radius: 10px;
+      text-decoration: none; font-weight: 600;
+    }
+    @media (prefers-color-scheme: dark) { .button { color: #0f1218; } }
+    section { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 8px 22px 14px; margin: 16px 0; }
+    h2 { font-size: 1.15rem; margin: 16px 0 6px; }
+    details { border-top: 1px solid var(--border); padding: 12px 0; }
+    details:first-of-type { border-top: none; }
+    summary { cursor: pointer; font-weight: 600; }
+    details p { margin: 8px 0 0; color: var(--text); }
+    a { color: var(--accent); }
+    footer { color: var(--muted); font-size: 0.9rem; padding-top: 24px; padding-bottom: 48px; }
+    @media (max-width: 480px) {
+      h1 { font-size: 1.6rem; }
+      section, .contact { padding-left: 16px; padding-right: 16px; }
+    }
+  
+    .split { max-width: 728px; margin: 56px auto 0; border: 0; border-top: 2px solid var(--border); }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <div id="en" lang="en">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>
+        </svg>
+      </div>
+      NetArgus
+      <a class="lang" href="#de">Deutsch ↓</a>
+    </div>
+    <h1>Support</h1>
+    <p class="meta">Help and frequently asked questions about NetArgus</p>
+  </header>
+
+  <main>
+    <div class="contact">
+      <h2>Contact</h2>
+      <p>Do you have a question, a problem or a suggestion? Send us an email. We usually reply within a few days.</p>
+      <p>Please include your device model, your iOS or macOS version and the app version if you can.</p>
+      <a class="button" href="mailto:bmengler@me.com?subject=NetArgus%20Support">Email support</a>
+    </div>
+
+    <section>
+      <h2>Frequently asked questions</h2>
+
+      <details>
+        <summary>Why does NetArgus not find any devices on my network?</summary>
+        <p>Check that NetArgus is allowed to access the local network: Settings (on a Mac: System Settings) → Privacy &amp; Security → Local Network → turn on NetArgus. Also make sure your device is connected to the right Wi-Fi network. In some networks (for example guest Wi-Fi), the router prevents devices from seeing each other.</p>
+      </details>
+
+      <details>
+        <summary>Why does NetArgus not show a MAC address for many devices?</summary>
+        <p>iOS and macOS do not pass the MAC addresses of other devices on the network to apps. NetArgus therefore only shows a MAC address when the device reports it itself, for example via NetBIOS (typical for NAS and Windows computers), AirPlay or UPnP. For devices that do not, such as virtual machines or your own device, the field stays empty.</p>
+      </details>
+
+      <details>
+        <summary>Ping or traceroute gets no reply. Is the app broken?</summary>
+        <p>Not necessarily. Many servers, firewalls and routers deliberately do not answer ping or traceroute packets. Missing replies do not automatically mean that a destination is unreachable.</p>
+      </details>
+
+      <details>
+        <summary>Which DNS server is used for DNS lookups?</summary>
+        <p>For "Dig", by default the DNS server your device is currently using, usually the one of your router or network provider. You can also enter a different server there. The "DNS check", on the other hand, asks several resolvers at the same time: your own as well as Cloudflare, Google and Quad9, and compares the answers.</p>
+      </details>
+
+      <details>
+        <summary>How do "Changes" and the notifications work?</summary>
+        <p>After each complete scan, NetArgus compares the devices found with the last scan of the same address range and shows new, missing and moved devices (new IP address). Cancelled scans are not compared. If you like, the app shows a notification about new devices after a scan while it is running in the background. You can find the switch under "Changes".</p>
+      </details>
+
+      <details>
+        <summary>Does NetArgus store my data?</summary>
+        <p>Only locally on your device: the scan history (the last 30 scans) and the devices you save yourself. We do not receive any of it, and nothing is transmitted. You can delete the history under "Changes" and known devices in their list. Deleting the app removes everything. You can find details in the <a href="index.html#en">privacy policy</a>.</p>
+      </details>
+
+      <details>
+        <summary>May I scan any network?</summary>
+        <p>Please only use NetArgus on networks that you own or have permission to test.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 NetArgus · <a href="index.html#en">Privacy</a> · <a href="mailto:bmengler@me.com">Contact</a>
+  </footer>
+  </div>
+
+  <hr class="split">
+
+  <div id="de" lang="de">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>
+        </svg>
+      </div>
+      NetArgus
+      <a class="lang" href="#en">English ↑</a>
+    </div>
+    <h1>Support</h1>
+    <p class="meta">Hilfe und häufige Fragen zu NetArgus</p>
+  </header>
+
+  <main>
+    <div class="contact">
+      <h2>Kontakt</h2>
+      <p>Du hast eine Frage, ein Problem oder einen Verbesserungsvorschlag? Schreib uns eine E-Mail. Wir antworten in der Regel innerhalb weniger Tage.</p>
+      <p>Bitte gib dabei möglichst dein Gerätemodell, die iOS- bzw. macOS-Version und die App-Version an.</p>
+      <a class="button" href="mailto:bmengler@me.com?subject=NetArgus%20Support">E-Mail an den Support</a>
+    </div>
+
+    <section>
+      <h2>Häufige Fragen</h2>
+
+      <details>
+        <summary>Warum findet NetArgus keine Geräte in meinem Netzwerk?</summary>
+        <p>Prüfe, ob NetArgus Zugriff auf das lokale Netzwerk hat: Einstellungen (auf dem Mac: Systemeinstellungen) → Datenschutz &amp; Sicherheit → Lokales Netzwerk → NetArgus aktivieren. Achte außerdem darauf, dass dein Gerät mit dem richtigen WLAN verbunden ist. In manchen Netzwerken (z.&nbsp;B. Gäste-WLAN) verhindert der Router, dass Geräte einander sehen.</p>
+      </details>
+
+      <details>
+        <summary>Warum zeigt NetArgus bei vielen Geräten keine MAC-Adresse?</summary>
+        <p>iOS und macOS geben die MAC-Adressen anderer Geräte im Netzwerk nicht an Apps weiter. NetArgus zeigt eine MAC-Adresse deshalb nur an, wenn das Gerät sie selbst meldet, z.&nbsp;B. über NetBIOS (typisch für NAS und Windows-Rechner), AirPlay oder UPnP. Bei Geräten, die das nicht tun, etwa virtuellen Maschinen oder dem eigenen Gerät, bleibt das Feld leer.</p>
+      </details>
+
+      <details>
+        <summary>Ping oder Traceroute bekommt keine Antwort. Ist die App defekt?</summary>
+        <p>Nicht unbedingt. Viele Server, Firewalls und Router beantworten Ping- oder Traceroute-Pakete absichtlich nicht. Fehlende Antworten bedeuten daher nicht automatisch, dass ein Ziel nicht erreichbar ist.</p>
+      </details>
+
+      <details>
+        <summary>Welcher DNS-Server wird für DNS-Abfragen verwendet?</summary>
+        <p>Bei „Dig“ standardmäßig der DNS-Server, den dein Gerät aktuell nutzt, in der Regel der deines Routers bzw. Netzbetreibers. Du kannst dort auch einen anderen Server eintragen. Der „DNS-Check“ fragt dagegen mehrere Resolver gleichzeitig ab: deine eigenen sowie Cloudflare, Google und Quad9, und vergleicht die Antworten.</p>
+      </details>
+
+      <details>
+        <summary>Wie funktionieren „Änderungen“ und die Benachrichtigungen?</summary>
+        <p>Nach jedem vollständigen Scan vergleicht NetArgus die gefundenen Geräte mit dem letzten Scan desselben Adressbereichs und zeigt neue, verschwundene und umgezogene Geräte (neue IP-Adresse) an. Abgebrochene Scans werden nicht verglichen. Auf Wunsch zeigt die App nach einem Scan eine Mitteilung über neue Geräte an, solange sie im Hintergrund läuft. Den Schalter findest du unter „Änderungen“.</p>
+      </details>
+
+      <details>
+        <summary>Speichert NetArgus meine Daten?</summary>
+        <p>Nur lokal auf deinem Gerät: den Scan-Verlauf (die letzten 30 Scans) und die Geräte, die du selbst speicherst. Wir erhalten davon nichts, und es wird nichts übertragen. Den Verlauf kannst du unter „Änderungen“ löschen, bekannte Geräte in deren Liste. Beim Löschen der App wird alles entfernt. Details findest du in der <a href="index.html#de">Datenschutzerklärung</a>.</p>
+      </details>
+
+      <details>
+        <summary>Darf ich jedes Netzwerk scannen?</summary>
+        <p>Bitte nutze NetArgus nur in Netzwerken, die dir gehören oder für die du eine Erlaubnis hast.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 NetArgus · <a href="index.html#de">Datenschutz</a> · <a href="mailto:bmengler@me.com">Kontakt</a>
+  </footer>
+  </div>
+</body>
+</html>
