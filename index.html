@@ -135,7 +135,7 @@
         <li>No analytics, tracking or advertising services are used.</li>
         <li>The app itself does not send crash reports or usage statistics.</li>
         <li>No data is stored on our own servers or with cloud providers. We do not operate any servers that the app's requests pass through.</li>
-        <li>We do not share data with third parties. Network requests that you start in the app go directly from your device to the destinations described in section 3.</li>
+        <li>We do not share data with third parties. Network requests that you start in the app, and the automatic download of the manufacturer list, go directly from your device to the destinations described in section 3.</li>
       </ul>
     </section>
 
@@ -146,6 +146,7 @@
       <p><strong>Note on external destinations:</strong> For ping, traceroute and DNS lookups, your device sends network packets directly to the destinations you enter. With traceroute, they also reach the routers along the way. With DNS lookups, they go to the DNS server in use, such as the one of your network provider or one you chose.</p>
       <p><strong>DNS check:</strong> This tool sends the domain you enter to several resolvers at the same time: the ones configured on your device and the public services of Cloudflare (1.1.1.1, also via DNS over HTTPS at cloudflare-dns.com), Google (8.8.8.8) and Quad9 (9.9.9.9). It also looks up the name whoami.akamai.net to show which resolver acts on your behalf on the internet. The check runs only when you start it.</p>
       <p>As with any internet connection, these parties technically see the public IP address of your connection and, for DNS lookups, the domain being looked up. We have no influence on how they process this data. The privacy policies of the respective operators apply.</p>
+      <p><strong>Manufacturer list:</strong> To show the manufacturer of a device based on its MAC address, NetArgus uses the public vendor list of the Wireshark project (<a href="https://www.wireshark.org/download/automated/data/manuf" rel="noopener">wireshark.org</a>), which is based on the IEEE registry. The app downloads this file automatically when it starts, but only if no copy is stored yet or the stored copy is older than 30 days. The request does not contain any information about your network, your scans or your devices. The matching of MAC addresses with manufacturers happens on your device. As with any internet connection, the operator technically sees the public IP address of your connection. We have no influence on how the operator processes this data; the privacy policy of the Wireshark project applies. If the download fails, the app uses the stored copy or shows no manufacturer.</p>
     </section>
 
     <section>
@@ -154,6 +155,7 @@
       <ul>
         <li><strong>Scan history:</strong> After each completed scan, the time, the address range and the devices found (IP address, name and, if available, MAC address) are saved, up to the last 30 scans. The app uses this to show which devices are new or have disappeared. You can remove the history in the app under "Changes" with "Clear history".</li>
         <li><strong>Known devices:</strong> Devices you save yourself (for example for Wake on LAN) are stored with name, MAC address, last IP address and last-seen time. You can delete them in the app at any time.</li>
+        <li><strong>Manufacturer list:</strong> The downloaded vendor list is kept in the app's cache for up to 30 days, so that it does not have to be downloaded again. The system may delete it at any time.</li>
         <li><strong>Settings:</strong> Your choices, for example whether you want notifications about new devices.</li>
       </ul>
       <p>All of this data is removed when you delete the app. If you export results (CSV or JSON), you decide where the file goes.</p>
@@ -241,7 +243,7 @@
         <li>Es werden keine Analyse-, Tracking- oder Werbedienste eingesetzt.</li>
         <li>Es werden keine Absturzberichte oder Nutzungsstatistiken durch die App selbst versendet.</li>
         <li>Es werden keine Daten auf eigenen Servern oder bei Cloud-Anbietern gespeichert. Wir betreiben keine Server, über die Anfragen der App laufen.</li>
-        <li>Wir geben keine Daten an Dritte weiter. Netzwerkanfragen, die du in der App startest, gehen direkt von deinem Gerät an die in Abschnitt 3 genannten Ziele.</li>
+        <li>Wir geben keine Daten an Dritte weiter. Netzwerkanfragen, die du in der App startest, sowie der automatische Abruf der Herstellerliste gehen direkt von deinem Gerät an die in Abschnitt 3 genannten Ziele.</li>
       </ul>
     </section>
 
@@ -252,6 +254,7 @@
       <p><strong>Hinweis zu externen Zielen:</strong> Bei Ping, Traceroute und DNS-Abfragen sendet dein Gerät direkt Netzwerkpakete an die von dir eingegebenen Ziele. Bei Traceroute gehen sie auch an die Router auf dem Weg dorthin, bei DNS-Abfragen an den genutzten DNS-Server, etwa den deines Netzbetreibers oder einen von dir gewählten.</p>
       <p><strong>DNS-Check:</strong> Dieses Werkzeug stellt die eingegebene Domain gleichzeitig an mehrere Resolver, nämlich an die in deinem Gerät eingestellten sowie an die öffentlichen Dienste von Cloudflare (1.1.1.1, auch per DNS over HTTPS über cloudflare-dns.com), Google (8.8.8.8) und Quad9 (9.9.9.9). Zusätzlich wird der Name whoami.akamai.net abgefragt, um zu zeigen, welcher Resolver für dich im Internet auftritt. Die Abfrage startet nur, wenn du sie auslöst.</p>
       <p>Wie bei jeder Internetverbindung sehen die genannten Stellen technisch bedingt die öffentliche IP-Adresse deiner Verbindung, bei DNS-Abfragen außerdem die abgefragte Domain. Auf deren Verarbeitung haben wir keinen Einfluss. Es gelten die Datenschutzbestimmungen der jeweiligen Betreiber.</p>
+      <p><strong>Herstellerliste:</strong> Um zu einer MAC-Adresse den Hersteller eines Geräts anzuzeigen, nutzt NetArgus die öffentliche Herstellerliste des Wireshark-Projekts (<a href="https://www.wireshark.org/download/automated/data/manuf" rel="noopener">wireshark.org</a>), die auf dem IEEE-Register beruht. Die App lädt diese Datei beim Start automatisch herunter, aber nur, wenn noch keine Kopie gespeichert ist oder die gespeicherte Kopie älter als 30 Tage ist. Die Anfrage enthält keine Angaben über dein Netzwerk, deine Scans oder deine Geräte. Der Abgleich von MAC-Adressen mit Herstellern erfolgt auf deinem Gerät. Wie bei jeder Internetverbindung sieht der Betreiber technisch bedingt die öffentliche IP-Adresse deiner Verbindung. Auf dessen Verarbeitung haben wir keinen Einfluss; es gilt die Datenschutzerklärung des Wireshark-Projekts. Schlägt der Download fehl, verwendet die App die gespeicherte Kopie oder zeigt keinen Hersteller an.</p>
     </section>
 
     <section>
@@ -260,6 +263,7 @@
       <ul>
         <li><strong>Scan-Verlauf:</strong> Nach jedem abgeschlossenen Scan werden Zeitpunkt, Adressbereich und die gefundenen Geräte (IP-Adresse, Name und ggf. MAC-Adresse) gespeichert, höchstens die letzten 30 Scans. Damit zeigt die App, welche Geräte neu hinzugekommen oder verschwunden sind. Du kannst den Verlauf in der App unter „Änderungen“ über „Verlauf löschen“ entfernen.</li>
         <li><strong>Bekannte Geräte:</strong> Geräte, die du selbst speicherst (z.&nbsp;B. für Wake on LAN), werden mit Name, MAC-Adresse, letzter IP-Adresse und letztem Zeitpunkt gespeichert. Du kannst sie jederzeit in der App löschen.</li>
+        <li><strong>Herstellerliste:</strong> Die heruntergeladene Herstellerliste wird bis zu 30 Tage im Cache der App gehalten, damit sie nicht erneut geladen werden muss. Das System kann sie jederzeit löschen.</li>
         <li><strong>Einstellungen:</strong> Deine Auswahl, z.&nbsp;B. ob du Benachrichtigungen über neue Geräte wünschst.</li>
       </ul>
       <p>Alle diese Daten werden beim Löschen der App entfernt. Wenn du Ergebnisse exportierst (CSV oder JSON), entscheidest du selbst, wohin du die Datei weitergibst.</p>
